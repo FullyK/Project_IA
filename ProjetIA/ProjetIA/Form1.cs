@@ -72,9 +72,7 @@ namespace ProjetIA
             {
                 if (compteurImpasse[i] == 1)
                 {
-
-                    reponse = reponse + " " + Convert.ToChar(i+65).ToString() + ", ";
-                    
+                    reponse = reponse + " " + Convert.ToChar(i+65).ToString() + ", ";                    
                 }
             }
 
@@ -95,13 +93,13 @@ namespace ProjetIA
             List<GenericNode> Solution = g.RechercheSolutionAEtoile(depart);
 
             string reponse = "Le chemin est : ";
-
+            string poids = "Son poids est : ";
             foreach (GenericNode Gn in Solution)
             {
                 reponse += Gn.GetNom() + " ";
             }
 
-            MessageBox.Show(reponse);
+            MessageBox.Show(reponse + "\n" + poids + CalculPoids(Solution).ToString());
         }
 
         private void CheminLaiterie_Click(object sender, EventArgs e)
@@ -109,8 +107,35 @@ namespace ProjetIA
             string etape = this.EtapeLaiterie.Text;
             Regex myRegex = new Regex("(,)");
             etape = myRegex.Replace(etape, "");
-            
+            //N*N-1 Génération de parcours
 
+            List<String> etapesList = new List<string>();
+
+            foreach (char lettre in etape)
+            {
+                etapesList.Add(lettre.ToString());
+            }
+
+            NodeGraph depart = new NodeGraph("A");
+            depart.setMatrice(matriceAdjacente);
+
+            foreach (String nodeName in etapesList)
+            {
+                depart.setEndNode(nodeName);
+            }
+            
+        }
+
+        private double CalculPoids(List<GenericNode> chemins)
+        {
+            double poids = 0;
+
+            for (int i = 0; i < chemins.Count-1; i++)
+            {
+                poids += chemins[i].GetArcCost(chemins[i + 1]);
+            }
+
+            return poids;
         }
     }
     
