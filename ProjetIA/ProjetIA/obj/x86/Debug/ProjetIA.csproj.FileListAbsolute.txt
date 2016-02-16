@@ -5,3 +5,12 @@ C:\Users\jalbouys\Desktop\ProjetIA\ProjetIA\bin\Debug\ProjetIA.exe
 C:\Users\jalbouys\Desktop\ProjetIA\ProjetIA\bin\Debug\ProjetIA.pdb
 C:\Users\jalbouys\Desktop\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.exe
 C:\Users\jalbouys\Desktop\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.pdb
+C:\Users\jalbouys\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.exe
+C:\Users\jalbouys\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.pdb
+C:\Users\jalbouys.ENSC.000\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.exe
+C:\Users\jalbouys.ENSC.000\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.pdb
+C:\Users\jalbouys.ENSC.000\Desktop\Project_IA\ProjetIA\ProjetIA\bin\Debug\ProjetIA.exe
+C:\Users\jalbouys.ENSC.000\Desktop\Project_IA\ProjetIA\ProjetIA\bin\Debug\ProjetIA.pdb
+C:\Users\jalbouys.ENSC.000\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.Form1.resources
+C:\Users\jalbouys.ENSC.000\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.Properties.Resources.resources
+C:\Users\jalbouys.ENSC.000\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.csproj.GenerateResource.Cache

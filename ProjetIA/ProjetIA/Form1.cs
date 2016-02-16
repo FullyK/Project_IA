@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace ProjetIA
 {
@@ -101,6 +102,15 @@ namespace ProjetIA
             }
 
             MessageBox.Show(reponse);
+        }
+
+        private void CheminLaiterie_Click(object sender, EventArgs e)
+        {
+            string etape = this.EtapeLaiterie.Text;
+            Regex myRegex = new Regex("(,)");
+            etape = myRegex.Replace(etape, "");
+            
+
         }
     }
     
