@@ -9,10 +9,17 @@ namespace ProjetIA
     {
         private static string EndNode;
         private static int[,] Matrice;
+        private double poidsPrecedent;
 
         public NodeGraph(string nom)
             : base(nom)
         {
+        }
+
+        public NodeGraph(string nom, double poidsPrecedent)
+            : base(nom)
+        {
+            this.poidsPrecedent = poidsPrecedent;
         }
 
 
@@ -57,6 +64,11 @@ namespace ProjetIA
         public void setMatrice(int[,] matrice)
         {
             Matrice = matrice;
+        }
+
+        public override double getPoidsPrecedent()
+        {
+            return this.poidsPrecedent;
         }
     }
 }

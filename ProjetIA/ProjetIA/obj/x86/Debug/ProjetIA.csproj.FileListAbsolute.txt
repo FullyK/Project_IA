@@ -14,3 +14,8 @@ C:\Users\jalbouys.ENSC.000\Desktop\Project_IA\ProjetIA\ProjetIA\bin\Debug\Projet
 C:\Users\jalbouys.ENSC.000\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.Form1.resources
 C:\Users\jalbouys.ENSC.000\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.Properties.Resources.resources
 C:\Users\jalbouys.ENSC.000\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.csproj.GenerateResource.Cache
+C:\Users\jalbouys\Desktop\Project_IA\ProjetIA\ProjetIA\bin\Debug\ProjetIA.exe
+C:\Users\jalbouys\Desktop\Project_IA\ProjetIA\ProjetIA\bin\Debug\ProjetIA.pdb
+C:\Users\jalbouys\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.Form1.resources
+C:\Users\jalbouys\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.Properties.Resources.resources
+C:\Users\jalbouys\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.csproj.GenerateResource.Cache

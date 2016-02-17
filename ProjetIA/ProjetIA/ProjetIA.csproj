@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="GenericNode.cs" />
     <Compile Include="Graph.cs" />
+    <Compile Include="GraphVoyageur.cs" />
     <Compile Include="NodeGraph.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

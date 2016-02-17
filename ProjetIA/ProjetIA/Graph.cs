@@ -8,10 +8,10 @@ namespace ProjetIA
 {
     class Graph
     {
-        private List<GenericNode> L_Ouverts;
-        private List<GenericNode> L_Fermes;
+        protected List<GenericNode> L_Ouverts;
+        protected List<GenericNode> L_Fermes;
 
-        private GenericNode ChercheNodeDansFermes(string NodeName)
+        protected GenericNode ChercheNodeDansFermes(string NodeName)
         {
             int i = 0;
 
@@ -24,7 +24,7 @@ namespace ProjetIA
             return null;
         }
 
-        private GenericNode ChercheNodeDansOuverts(string NodeName)
+        protected GenericNode ChercheNodeDansOuverts(string NodeName)
         {
             int i = 0;
 
@@ -87,7 +87,7 @@ namespace ProjetIA
             return _LN;
         }
 
-        private void MAJSuccesseurs(GenericNode N)
+        protected void MAJSuccesseurs(GenericNode N)
         {
             // On fait appel à GetListSucc, méthode abstraite qu'on doit réécrire pour chaque
             // problème. Elle doit retourner la liste complète des noeuds successeurs de N.

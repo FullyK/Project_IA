@@ -108,14 +108,17 @@ namespace ProjetIA
             Regex myRegex = new Regex("(,)");
             etape = myRegex.Replace(etape, "");
             //N*N-1 Génération de parcours
+            List<char> listeChar = new List<char>();
+            List<String> ListesChemins = new List<string>();
 
             List<String> etapesList = new List<string>();
 
             foreach (char lettre in etape)
             {
                 etapesList.Add(lettre.ToString());
+                listeChar.Add(lettre);
             }
-
+            
             #region Calcul d'une heuristique avec glouton
             /**Calcul rapide d'une heuristique en utilisant un algoithme glouton**/
             NodeGraph depart = new NodeGraph("A");
@@ -183,9 +186,102 @@ namespace ProjetIA
             }
 
             MessageBox.Show(reponse + "\n" + poids + CalculPoids(Solution).ToString());
+
+            double borneMax = CalculPoids(Solution);
             #endregion
 
 
+            #region Algorithme du voyageur du commerce
+
+            GraphVoyageur Voyageur = new GraphVoyageur();
+
+            MethodeRecursive("", listeChar, ListesChemins);
+            List<GenericNode> SolutionOptimale = new List<GenericNode>();
+            double poidsVoyageur = int.MaxValue;
+            double poidsCourant = 0;
+            foreach (string combinaison in ListesChemins)
+            {
+                List<String> CheminVoyageur = new List<string>();
+                
+                
+                List<GenericNode> SolutionTmp = new List<GenericNode>();
+                List<GenericNode> SolutionEtapeVoyageur = new List<GenericNode>();
+
+                foreach (char etapeVoyageur in combinaison)
+                {
+                    CheminVoyageur.Add(etapeVoyageur.ToString());
+                }
+
+                NodeGraph departVoyageur = new NodeGraph("A", poidsCourant);
+
+                foreach (String nodeName in CheminVoyageur)
+                {
+                    double poidsTemp = CalculPoids(SolutionTmp);
+                    if (poidsTemp < borneMax)
+                    {
+                        departVoyageur.setEndNode(nodeName);
+                        SolutionEtapeVoyageur = Voyageur.RechercheSolutionAEtoile(departVoyageur);
+
+                        foreach (GenericNode Gn in SolutionEtapeVoyageur)
+                        {
+                            if (SolutionTmp.Count != 0)
+                            {
+                                if (SolutionTmp.Last().GetNom() != Gn.GetNom())
+                                {
+                                    SolutionTmp.Add(Gn);
+                                }
+                            }
+                            else
+                                SolutionTmp.Add(Gn);
+
+                        }
+                        poidsCourant = CalculPoids(SolutionTmp);
+                        departVoyageur = new NodeGraph(nodeName, poidsCourant);
+                    }
+                }
+
+                departVoyageur.setEndNode("A");
+                SolutionEtapeVoyageur = Voyageur.RechercheSolutionAEtoile(departVoyageur);
+
+                foreach (GenericNode Gn in SolutionEtapeVoyageur)
+                {
+                    if (SolutionTmp.Count != 0)
+                    {
+                        if (SolutionTmp.Last().GetNom() != Gn.GetNom())
+                        {
+                            SolutionTmp.Add(Gn);
+                        }
+                    }
+                    else
+                        SolutionTmp.Add(Gn);
+
+                }
+                
+                if (poidsVoyageur > CalculPoids(SolutionTmp))
+                {                    
+                    poidsVoyageur = CalculPoids(SolutionTmp);
+                    SolutionOptimale = SolutionTmp;
+                }
+
+                string reponseTmp = "Le chemin optimal est : ";
+                string poidsTmp = "Son poids est : ";
+                foreach (GenericNode Gn in SolutionTmp)
+                {
+                    reponseTmp += Gn.GetNom() + " ";
+                }
+
+                MessageBox.Show(reponseTmp + "\n" + poidsTmp + CalculPoids(SolutionTmp).ToString());
+            }
+
+            string reponseOptimale = "Le chemin optimal est : ";
+            string poidsOptimal = "Son poids est : ";
+            foreach (GenericNode Gn in SolutionOptimale)
+            {
+                reponseOptimale += Gn.GetNom() + " ";
+            }
+
+            MessageBox.Show(reponseOptimale + "\n" + poidsOptimal + CalculPoids(SolutionOptimale).ToString());
+            #endregion
 
 
         }
@@ -200,6 +296,44 @@ namespace ProjetIA
             }
 
             return poids;
+        }
+
+
+        public static void MethodeRecursive(string combinaison, List<char> listeDesCaracteres, List<string> listeDesCombinaisons)
+        {
+
+            // Variable servant à la vérification de l'existance d'un caractère précis dans la combinaison actuelle
+            bool existeDeja = false;
+
+            // Si la taille de la combinaison actuelle est égale au nombre de caractères de la liste originelle
+            // Alors on ajoute cette combinaison à la liste des combinaison
+            if (combinaison.Length == listeDesCaracteres.Count)
+                listeDesCombinaisons.Add(combinaison);
+
+            // Pour chaque caractère de la liste originelle
+            for (int i = 0; i < listeDesCaracteres.Count; i++)
+            {
+
+                // Pour chaque caractère de la combinaison actuelle
+                for (int j = 0; j < combinaison.Length; j++)
+                {
+
+                    // Si le caractère actuelle de la liste originelle est déjà dans la combinaison actuelle
+                    if (combinaison[j] == listeDesCaracteres.ElementAt(i))
+                    {
+                        // Alors existeDeja prend la valeur "vrai" et la boucle s'arrête
+                        existeDeja = true;
+                        break;
+                    }
+                    // Sinon existeDeja prend la valeur "faux"
+                    else existeDeja = false;
+                }
+
+                // Si existeDeja a la valeur "faux" alors on lance la récursivité en appellant cette méthode à l'intérieur d'elle-même
+                if (!existeDeja)
+                    MethodeRecursive(combinaison + listeDesCaracteres.ElementAt(i), listeDesCaracteres, listeDesCombinaisons);
+            }
+
         }
     }
     

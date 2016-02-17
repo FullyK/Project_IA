@@ -90,5 +90,6 @@ namespace ProjetIA
         public abstract bool EndState();
         public abstract List<GenericNode> GetListSucc();
         public abstract void CalculeHCost();
+        public abstract double getPoidsPrecedent();
     }
 }
