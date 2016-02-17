@@ -32,7 +32,7 @@ namespace ProjetIA
                 {-1,-1,-1,-1,-1,-1,-1,2,-1,3,4,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
                 {-1,-1,-1,-1,-1,-1,-1,-1,3,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
                 {-1,-1,-1,-1,-1,-1,8,-1,4,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,7},
-                {-1,-1,-1,-1,-1,9,-1,-1,-1,-1,-1,-1,2,4,-1,-1,-1,-1,-1,-1,-1,-1,10},
+                {-1,-1,-1,-1,-1,9,-1,-1,-1,-1,-1,-1,2,4,-1,-1,7,-1,-1,-1,-1,-1,10},
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,2,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,4,-1,-1,7,3,-1,-1,-1,-1,-1,-1,-1},
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,7,-1,3,-1,-1,8,-1,-1,-1,-1},
@@ -45,6 +45,8 @@ namespace ProjetIA
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,11,-1,6},
                 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,7,10,-1,-1,-1,-1,-1,-1,-1,-1,-1,6,-1}
             };
+
+
         }
 
         private void buttonImpasse_Click(object sender, EventArgs e)
@@ -81,6 +83,7 @@ namespace ProjetIA
 
         }
 
+  
         private void Chemin_Click(object sender, EventArgs e)
         {
             NodeGraph depart = new NodeGraph(Depart.Text[0].ToString().ToUpper());
@@ -102,6 +105,51 @@ namespace ProjetIA
             MessageBox.Show(reponse + "\n" + poids + CalculPoids(Solution).ToString());
         }
 
+
+        private int[,] matriceEtape(List<string> etapesList)
+        {
+
+            etapesList.Insert(0, "A");
+
+            int taille = etapesList.Count;
+
+            int[,] matriceLaiterie = new int[taille,taille];
+
+            for (int i = 0; i < taille; i++)
+            {
+
+                for (int j = 0; j < taille; j++)
+                {
+                    if(i != j){
+
+                    NodeGraph depart = new NodeGraph((etapesList[i]));
+                    depart.setMatrice(matriceAdjacente);
+
+                    Graph Graphe = new Graph();
+
+                    depart.setEndNode(etapesList[j]);
+
+                    List<GenericNode> SolutionTmp = Graphe.RechercheSolutionAEtoile(depart);
+
+                    matriceLaiterie[i, j] = Convert.ToInt32(CalculPoids(SolutionTmp));
+                    
+                    }else{
+
+                        matriceLaiterie[i,j] = -1;
+
+                    }
+
+                }
+
+
+            }
+
+            return matriceLaiterie;
+
+        }
+
+
+
         private void CheminLaiterie_Click(object sender, EventArgs e)
         {
             string etape = this.EtapeLaiterie.Text;
@@ -115,6 +163,8 @@ namespace ProjetIA
             {
                 etapesList.Add(lettre.ToString());
             }
+
+            int[,] matriceLaiterie = matriceEtape(etapesList);
 
             #region Calcul d'une heuristique avec glouton
             /**Calcul rapide d'une heuristique en utilisant un algoithme glouton**/
@@ -186,9 +236,9 @@ namespace ProjetIA
             #endregion
 
 
+          }
 
 
-        }
 
         private double CalculPoids(List<GenericNode> chemins)
         {

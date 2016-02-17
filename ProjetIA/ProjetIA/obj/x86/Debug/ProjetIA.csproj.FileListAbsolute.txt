@@ -24,3 +24,4 @@ C:\Users\jalbouys.ENSC.000\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\Pr
 C:\Users\jalbouys.ENSC.000\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.Properties.Resources.resources
 C:\Users\jalbouys.ENSC.000\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.csproj.GenerateResource.Cache
 >>>>>>> origin/master
+H:\IA\Projet\Code\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.csprojResolveAssemblyReference.cache
