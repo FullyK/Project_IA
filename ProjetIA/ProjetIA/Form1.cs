@@ -239,7 +239,7 @@ namespace ProjetIA
                         departVoyageur = new NodeGraph(nodeName, poidsCourant);
                     }
                 }
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
                 departVoyageur.setEndNode("A");
                 SolutionEtapeVoyageur = Voyageur.RechercheSolutionAEtoile(departVoyageur);
 
