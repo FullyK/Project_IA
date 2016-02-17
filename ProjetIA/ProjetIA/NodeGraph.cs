@@ -35,7 +35,7 @@ namespace ProjetIA
 
             int ligne = Convert.ToInt32(this.GetNom()[0]) - 65;
 
-            for (int i = 0; i < Matrice.GetUpperBound(0); i++)
+            for (int i = 0; i < Matrice.GetUpperBound(0)+1; i++)
             {
                 if(Matrice[ligne,i] != -1)
                     Succ.Add(new NodeGraph(Convert.ToChar(i+65).ToString()));

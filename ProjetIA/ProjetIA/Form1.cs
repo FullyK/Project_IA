@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace ProjetIA
 {
@@ -71,9 +72,7 @@ namespace ProjetIA
             {
                 if (compteurImpasse[i] == 1)
                 {
-
-                    reponse = reponse + " " + Convert.ToChar(i+65).ToString() + ", ";
-                    
+                    reponse = reponse + " " + Convert.ToChar(i+65).ToString() + ", ";                    
                 }
             }
 
@@ -94,13 +93,113 @@ namespace ProjetIA
             List<GenericNode> Solution = g.RechercheSolutionAEtoile(depart);
 
             string reponse = "Le chemin est : ";
-
+            string poids = "Son poids est : ";
             foreach (GenericNode Gn in Solution)
             {
                 reponse += Gn.GetNom() + " ";
             }
 
-            MessageBox.Show(reponse);
+            MessageBox.Show(reponse + "\n" + poids + CalculPoids(Solution).ToString());
+        }
+
+        private void CheminLaiterie_Click(object sender, EventArgs e)
+        {
+            string etape = this.EtapeLaiterie.Text;
+            Regex myRegex = new Regex("(,)");
+            etape = myRegex.Replace(etape, "");
+            //N*N-1 Génération de parcours
+
+            List<String> etapesList = new List<string>();
+
+            foreach (char lettre in etape)
+            {
+                etapesList.Add(lettre.ToString());
+            }
+
+            #region Calcul d'une heuristique avec glouton
+            /**Calcul rapide d'une heuristique en utilisant un algoithme glouton**/
+            NodeGraph depart = new NodeGraph("A");
+            depart.setMatrice(matriceAdjacente);
+            double poidsMin = int.MaxValue;
+            List<GenericNode> SolutionEtape = new List<GenericNode>();
+
+            string EtapeName = "A";
+            List<GenericNode> Solution = new List<GenericNode>();
+            Graph Graphe = new Graph();
+
+            while (etapesList.Count != 0)
+            {
+                foreach (String nodeName in etapesList)
+                {
+                    depart.setEndNode(nodeName);
+                    List<GenericNode> SolutionTmp = Graphe.RechercheSolutionAEtoile(depart);
+                    if (poidsMin > CalculPoids(SolutionTmp))
+                    {
+                        EtapeName = nodeName;
+                        poidsMin = CalculPoids(SolutionTmp);
+                        SolutionEtape = SolutionTmp;
+                    }
+                }
+                poidsMin = int.MaxValue;
+                foreach (GenericNode Gn in SolutionEtape)
+                {
+                    if(Solution.Count != 0)
+                    {
+                        if(Solution.Last().GetNom() != Gn.GetNom())
+                        {
+                            Solution.Add(Gn);
+                        }
+                    }
+                    else
+                        Solution.Add(Gn);
+
+                }
+                depart = new NodeGraph(EtapeName);
+                etapesList.Remove(EtapeName);
+            }
+
+            NodeGraph retourDepart = new NodeGraph(Solution.Last().GetNom());
+            retourDepart.setEndNode("A");
+            SolutionEtape = Graphe.RechercheSolutionAEtoile(retourDepart);
+            foreach (GenericNode Gn in SolutionEtape)
+            {
+                if (Solution.Count != 0)
+                {
+                    if (Solution.Last().GetNom() != Gn.GetNom())
+                    {
+                        Solution.Add(Gn);
+                    }
+                }
+                else
+                    Solution.Add(Gn);
+            }
+
+
+            string reponse = "Le chemin est : ";
+            string poids = "Son poids est : ";
+            foreach (GenericNode Gn in Solution)
+            {
+                reponse += Gn.GetNom() + " ";
+            }
+
+            MessageBox.Show(reponse + "\n" + poids + CalculPoids(Solution).ToString());
+            #endregion
+
+
+
+
+        }
+
+        private double CalculPoids(List<GenericNode> chemins)
+        {
+            double poids = 0;
+
+            for (int i = 0; i < chemins.Count-1; i++)
+            {
+                poids += chemins[i].GetArcCost(chemins[i + 1]);
+            }
+
+            return poids;
         }
     }
     
