@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ProjetIA
 {
@@ -15,6 +16,7 @@ namespace ProjetIA
         protected double TotalCost;           //coût total (g+h)
         protected GenericNode ParentNode;     // noeud parent
         protected List<GenericNode> Enfants;  // noeuds enfants
+        private static double borneMax = int.MaxValue;
 
         public GenericNode(string nom)
         {
@@ -46,6 +48,16 @@ namespace ProjetIA
         public void SetEstimation(double h)
         {
             HCost = h;
+        }
+
+        public void setBorneMax(int borneMaxChemin)
+        {
+            borneMax = borneMaxChemin;
+        }
+
+        public double getBorneMac()
+        {
+            return borneMax;
         }
 
 
@@ -82,6 +94,7 @@ namespace ProjetIA
         {
 
             TotalCost = GCost + HCost;
+            
 
         }
 

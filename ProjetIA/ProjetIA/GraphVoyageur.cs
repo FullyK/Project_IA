@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ProjetIA
 {
@@ -27,6 +28,7 @@ namespace ProjetIA
 
                 // Il faut trouver les noeuds successeurs de N
                 this.MAJSuccesseurs(N);
+                
                 // Inutile de retrier car les insertions ont été faites en respectant l'ordre
 
                 // On prend le meilleur, donc celui en position 0, pour continuer à explorer les états
@@ -39,6 +41,22 @@ namespace ProjetIA
                 {
                     N = null;
                 }
+
+                int cout = 0;
+                GenericNode Ntmp = N;
+                List<GenericNode> NListTmp = new List<GenericNode>();
+                NListTmp.Add(N);
+                while (Ntmp != N0)
+                {
+                    Ntmp = Ntmp.GetNoeud_Parent();
+                    NListTmp.Insert(0, Ntmp);  // On insère en position 1
+                }
+                if (CalculPoids(NListTmp) > N.getBorneMac())
+                {
+                    L_Ouverts.Clear();
+                    N = null;
+                }
+
             }
 
             // A* terminé
@@ -58,8 +76,20 @@ namespace ProjetIA
             }
             return _LN;
         }
-        
-    
-    
+
+        private double CalculPoids(List<GenericNode> chemins)
+        {
+            double poids = 0;
+
+            for (int i = 0; i < chemins.Count - 1; i++)
+            {
+                poids += chemins[i].GetArcCost(chemins[i + 1]) + chemins[i].getPoidsPrecedent();
+            }
+
+            return poids;
+        }
+            
     }
+
+
 }

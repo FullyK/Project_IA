@@ -10,6 +10,7 @@ namespace ProjetIA
     {
         protected List<GenericNode> L_Ouverts;
         protected List<GenericNode> L_Fermes;
+        
 
         protected GenericNode ChercheNodeDansFermes(string NodeName)
         {
@@ -54,6 +55,7 @@ namespace ProjetIA
                 L_Fermes.Add(N);
 
                 // Il faut trouver les noeuds successeurs de N
+                
                 this.MAJSuccesseurs(N);
                 // Inutile de retrier car les insertions ont été faites en respectant l'ordre
 
@@ -104,7 +106,7 @@ namespace ProjetIA
                     {
                         // Il existe, donc on l'a déjà vu, N2 n'est qu'une copie de N2Bis
                         // Le nouveau chemin passant par N est-il meilleur ?
-                        if (N.GetGCost() + N.GetArcCost(N2) < N2bis.GetGCost())
+                        if (N.Cout_Total + N.GetArcCost(N2) < N2bis.Cout_Total)
                         {
                             // Mise à jour de N2bis
                             N2bis.SetGCost(N.GetGCost() + N.GetArcCost(N2));
@@ -121,10 +123,10 @@ namespace ProjetIA
                     }
                     else
                     {
-                        // N2 est nouveau, MAJ et insertion dans les ouverts
-                        N2.SetGCost(N.GetGCost() + N.GetArcCost(N2));
-                        N2.CalculeHCost();
+                        // N2 est nouveau, MAJ et insertion dans les ouverts                                           
                         N2.SetNoeud_Parent(N);
+                        N2.SetGCost(N.GetGCost() + N.GetArcCost(N2));     
+                        N2.CalculeHCost();
                         N2.calculCoutTotal(); // somme de GCost et HCost
                         this.InsertNewNodeInOpenList(N2);
                     }

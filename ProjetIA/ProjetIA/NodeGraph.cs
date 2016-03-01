@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Windows.Forms;
 
 namespace ProjetIA
 {
@@ -10,10 +11,13 @@ namespace ProjetIA
         private static string EndNode;
         private static int[,] Matrice;
         private double poidsPrecedent;
+        
 
         public NodeGraph(string nom)
             : base(nom)
         {
+            poidsPrecedent = 0;
+
         }
 
         public NodeGraph(string nom, double poidsPrecedent)
@@ -44,8 +48,12 @@ namespace ProjetIA
 
             for (int i = 0; i < Matrice.GetUpperBound(0)+1; i++)
             {
-                if(Matrice[ligne,i] != -1)
-                    Succ.Add(new NodeGraph(Convert.ToChar(i+65).ToString()));
+                if (Matrice[ligne, i] != -1)
+                {
+                    NodeGraph Enfant = new NodeGraph(Convert.ToChar(i + 65).ToString());
+                    Enfant.SetNoeud_Parent(this);
+                    Succ.Add(Enfant);
+                }
             }
 
             return Succ;
@@ -53,7 +61,8 @@ namespace ProjetIA
 
         public override void CalculeHCost()
         {
-            SetEstimation(0);
+            int h = 0;
+            SetEstimation(h);
         }
 
         public void setEndNode(string newEnd)
@@ -70,5 +79,8 @@ namespace ProjetIA
         {
             return this.poidsPrecedent;
         }
-    }
+
+    
+    
+}
 }

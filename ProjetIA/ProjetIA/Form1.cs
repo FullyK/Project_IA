@@ -76,7 +76,6 @@ namespace ProjetIA
                 }
             }
 
-
             MessageBox.Show(reponse, "Nombre d'impasse", MessageBoxButtons.OK);
 
         }
@@ -258,11 +257,15 @@ namespace ProjetIA
                 }
 
                 NodeGraph departVoyageur = new NodeGraph("A", poidsCourant);
+                
+                departVoyageur.setBorneMax((int)borneMax);
+                bool fin = true;
 
                 foreach (String nodeName in CheminVoyageur)
                 {
+                    
                     double poidsTemp = CalculPoids(SolutionTmp);
-                    if (poidsTemp < borneMax)
+                    if (poidsTemp < borneMax && fin != false)
                     {
                         departVoyageur.setEndNode(nodeName);
                         SolutionEtapeVoyageur = Voyageur.RechercheSolutionAEtoile(departVoyageur);
@@ -282,11 +285,21 @@ namespace ProjetIA
                         }
                         poidsCourant = CalculPoids(SolutionTmp);
                         departVoyageur = new NodeGraph(nodeName, poidsCourant);
+
+                        if (SolutionEtapeVoyageur.Count == 0)
+                        {
+                            fin = false;
+                            SolutionTmp.Clear();
+                        }
+
                     }
                 }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-                departVoyageur.setEndNode("A");
-                SolutionEtapeVoyageur = Voyageur.RechercheSolutionAEtoile(departVoyageur);
+
+                if (fin != false)
+                {
+                    departVoyageur.setEndNode("A");
+                    SolutionEtapeVoyageur = Voyageur.RechercheSolutionAEtoile(departVoyageur);
+                }
 
                 foreach (GenericNode Gn in SolutionEtapeVoyageur)
                 {
@@ -301,21 +314,31 @@ namespace ProjetIA
                         SolutionTmp.Add(Gn);
 
                 }
-                
-                if (poidsVoyageur > CalculPoids(SolutionTmp))
-                {                    
+
+                if (poidsVoyageur > CalculPoids(SolutionTmp) && fin != false)
+                {
                     poidsVoyageur = CalculPoids(SolutionTmp);
                     SolutionOptimale = SolutionTmp;
                 }
-                /*
-                string reponseTmp = "Le chemin optimal est : ";
-                string poidsTmp = "Son poids est : ";
-                foreach (GenericNode Gn in SolutionTmp)
+                else
                 {
-                    reponseTmp += Gn.GetNom() + " ";
+                    poidsVoyageur = int.MaxValue;
                 }
+                /*
+                string reponseTmp = "Le chemin tmp est : ";
+                string poidsTmp = "Son poids tmp est : ";
+                if (SolutionTmp.Count != 0)
+                {
+                    if(SolutionTmp.Last().GetNom() == "A")
+                    {
+                        foreach (GenericNode Gn in SolutionTmp)
+                        {
+                            reponseTmp += Gn.GetNom() + " ";
+                        }
 
-                MessageBox.Show(reponseTmp + "\n" + poidsTmp + CalculPoids(SolutionTmp).ToString());*/
+                        MessageBox.Show(reponseTmp + "\n" + poidsTmp + CalculPoids(SolutionTmp).ToString());
+                    }
+                }*/
             }
 
             string reponseOptimale = "Le chemin optimal est : ";
@@ -342,7 +365,6 @@ namespace ProjetIA
 
             return poids;
         }
-
 
         public static void MethodeRecursive(string combinaison, List<char> listeDesCaracteres, List<string> listeDesCombinaisons)
         {
