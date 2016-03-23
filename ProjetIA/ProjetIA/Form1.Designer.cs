@@ -36,12 +36,19 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.EtapeLaiterie = new System.Windows.Forms.TextBox();
             this.CheminLaiterie = new System.Windows.Forms.Button();
+            this.EtapeLaiterie = new System.Windows.Forms.TextBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.CalculQuestion4 = new System.Windows.Forms.Button();
+            this.etapeLaiterieRetour = new System.Windows.Forms.TextBox();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.colorationButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.SuspendLayout();
             // 
             // Impasse
@@ -80,13 +87,16 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.AllowDrop = true;
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(12, 50);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(427, 270);
+            this.tabControl1.Size = new System.Drawing.Size(326, 191);
             this.tabControl1.TabIndex = 4;
             // 
             // tabPage1
@@ -95,7 +105,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(419, 244);
+            this.tabPage1.Size = new System.Drawing.Size(318, 165);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Question 1";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -108,7 +118,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(419, 244);
+            this.tabPage2.Size = new System.Drawing.Size(318, 165);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Question 2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -119,17 +129,10 @@
             this.tabPage3.Controls.Add(this.EtapeLaiterie);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(419, 244);
+            this.tabPage3.Size = new System.Drawing.Size(318, 165);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Question 3";
             this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // EtapeLaiterie
-            // 
-            this.EtapeLaiterie.Location = new System.Drawing.Point(19, 31);
-            this.EtapeLaiterie.Name = "EtapeLaiterie";
-            this.EtapeLaiterie.Size = new System.Drawing.Size(100, 20);
-            this.EtapeLaiterie.TabIndex = 0;
             // 
             // CheminLaiterie
             // 
@@ -141,11 +144,68 @@
             this.CheminLaiterie.UseVisualStyleBackColor = true;
             this.CheminLaiterie.Click += new System.EventHandler(this.CheminLaiterie_Click);
             // 
+            // EtapeLaiterie
+            // 
+            this.EtapeLaiterie.Location = new System.Drawing.Point(19, 31);
+            this.EtapeLaiterie.Name = "EtapeLaiterie";
+            this.EtapeLaiterie.Size = new System.Drawing.Size(100, 20);
+            this.EtapeLaiterie.TabIndex = 0;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.CalculQuestion4);
+            this.tabPage4.Controls.Add(this.etapeLaiterieRetour);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(318, 165);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Question 4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // CalculQuestion4
+            // 
+            this.CalculQuestion4.Location = new System.Drawing.Point(15, 71);
+            this.CalculQuestion4.Name = "CalculQuestion4";
+            this.CalculQuestion4.Size = new System.Drawing.Size(124, 23);
+            this.CalculQuestion4.TabIndex = 7;
+            this.CalculQuestion4.Text = "Calcul du Chemin";
+            this.CalculQuestion4.UseVisualStyleBackColor = true;
+            this.CalculQuestion4.Click += new System.EventHandler(this.CalculQuestion4_Click);
+            // 
+            // etapeLaiterieRetour
+            // 
+            this.etapeLaiterieRetour.Location = new System.Drawing.Point(15, 24);
+            this.etapeLaiterieRetour.Name = "etapeLaiterieRetour";
+            this.etapeLaiterieRetour.Size = new System.Drawing.Size(100, 20);
+            this.etapeLaiterieRetour.TabIndex = 6;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.colorationButton);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(318, 165);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Question 5";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // colorationButton
+            // 
+            this.colorationButton.Location = new System.Drawing.Point(22, 27);
+            this.colorationButton.Name = "colorationButton";
+            this.colorationButton.Size = new System.Drawing.Size(75, 23);
+            this.colorationButton.TabIndex = 0;
+            this.colorationButton.Text = "Coloration";
+            this.colorationButton.UseVisualStyleBackColor = true;
+            this.colorationButton.Click += new System.EventHandler(this.colorationButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 421);
+            this.ClientSize = new System.Drawing.Size(800, 433);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -155,6 +215,9 @@
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.tabPage5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -171,6 +234,11 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TextBox EtapeLaiterie;
         private System.Windows.Forms.Button CheminLaiterie;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button CalculQuestion4;
+        private System.Windows.Forms.TextBox etapeLaiterieRetour;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.Button colorationButton;
     }
 }
 

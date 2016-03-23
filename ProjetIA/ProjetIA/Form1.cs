@@ -261,46 +261,52 @@ namespace ProjetIA
                 departVoyageur.setBorneMax((int)borneMax);
                 bool fin = true;
 
+                List<String> aIgnore = new List<string>();
+
                 foreach (String nodeName in CheminVoyageur)
                 {
-                    
-                    double poidsTemp = CalculPoids(SolutionTmp);
-                    if (poidsTemp < borneMax && fin != false)
+                    if(!aIgnore.Contains(nodeName))
                     {
-                        departVoyageur.setEndNode(nodeName);
-                        SolutionEtapeVoyageur = Voyageur.RechercheSolutionAEtoile(departVoyageur);
-
-                        foreach (GenericNode Gn in SolutionEtapeVoyageur)
+                        double poidsTemp = CalculPoids(SolutionTmp);
+                        if (poidsTemp < borneMax && fin != false)
                         {
-                            if (SolutionTmp.Count != 0)
+                            departVoyageur.setEndNode(nodeName);
+                            SolutionEtapeVoyageur = Voyageur.RechercheSolutionAEtoile(departVoyageur);
+
+                            foreach (GenericNode Gn in SolutionEtapeVoyageur)
                             {
-                                if (SolutionTmp.Last().GetNom() != Gn.GetNom())
+                                if(nodeName.Contains(Gn.GetNom()))
                                 {
-                                    SolutionTmp.Add(Gn);
+                                    //MessageBox.Show(Gn.GetNom() + "//" + nodeName);
+                                    aIgnore.Add(nodeName);
                                 }
+                                if (SolutionTmp.Count != 0)
+                                {
+                                    if (SolutionTmp.Last().GetNom() != Gn.GetNom())
+                                    {
+                                        SolutionTmp.Add(Gn);
+                                    }
+                                }
+                                else
+                                    SolutionTmp.Add(Gn);
+
                             }
-                            else
-                                SolutionTmp.Add(Gn);
+                            poidsCourant = CalculPoids(SolutionTmp);
+                            departVoyageur = new NodeGraph(nodeName, poidsCourant);
+
+                            if (SolutionEtapeVoyageur.Count == 0)
+                            {
+                                fin = false;
+                                SolutionTmp.Clear();
+                            }
 
                         }
-                        poidsCourant = CalculPoids(SolutionTmp);
-                        departVoyageur = new NodeGraph(nodeName, poidsCourant);
-
-                        if (SolutionEtapeVoyageur.Count == 0)
-                        {
-                            fin = false;
-                            SolutionTmp.Clear();
-                        }
-
                     }
                 }
-
-                if (fin != false)
-                {
-                    departVoyageur.setEndNode("A");
-                    SolutionEtapeVoyageur = Voyageur.RechercheSolutionAEtoile(departVoyageur);
-                }
-
+                
+                departVoyageur.setEndNode("A");
+                SolutionEtapeVoyageur = Voyageur.RechercheSolutionAEtoile(departVoyageur);
+                
                 foreach (GenericNode Gn in SolutionEtapeVoyageur)
                 {
                     if (SolutionTmp.Count != 0)
@@ -312,33 +318,14 @@ namespace ProjetIA
                     }
                     else
                         SolutionTmp.Add(Gn);
-
                 }
 
-                if (poidsVoyageur > CalculPoids(SolutionTmp) && fin != false)
+                //MessageBox.Show(poidsVoyageur + "//" + CalculPoids(SolutionTmp));
+                if (poidsVoyageur > CalculPoids(SolutionTmp))
                 {
                     poidsVoyageur = CalculPoids(SolutionTmp);
                     SolutionOptimale = SolutionTmp;
-                }
-                else
-                {
-                    poidsVoyageur = int.MaxValue;
-                }
-                /*
-                string reponseTmp = "Le chemin tmp est : ";
-                string poidsTmp = "Son poids tmp est : ";
-                if (SolutionTmp.Count != 0)
-                {
-                    if(SolutionTmp.Last().GetNom() == "A")
-                    {
-                        foreach (GenericNode Gn in SolutionTmp)
-                        {
-                            reponseTmp += Gn.GetNom() + " ";
-                        }
-
-                        MessageBox.Show(reponseTmp + "\n" + poidsTmp + CalculPoids(SolutionTmp).ToString());
-                    }
-                }*/
+                } 
             }
 
             string reponseOptimale = "Le chemin optimal est : ";
@@ -402,6 +389,339 @@ namespace ProjetIA
             }
 
         }
-    }
+
+        private void CalculQuestion4_Click(object sender, EventArgs e)
+        {
+            string etape = this.etapeLaiterieRetour.Text;
+            Regex myRegex = new Regex("(,)");
+            etape = myRegex.Replace(etape, "");
+            //N*N-1 Génération de parcours
+            List<char> listeChar = new List<char>();
+            List<String> ListesChemins = new List<string>();
+
+            List<String> etapesList = new List<string>();
+
+            foreach (char lettre in etape)
+            {
+                etapesList.Add(lettre.ToString());
+                listeChar.Add(lettre);
+            }
+
+            #region Calcul d'une heuristique avec glouton
+            /**Calcul rapide d'une heuristique en utilisant un algoithme glouton**/
+            NodeGraph depart = new NodeGraph("A");
+            depart.setMatrice(matriceAdjacente);
+            double poidsMin = int.MaxValue;
+            List<GenericNode> SolutionEtape = new List<GenericNode>();
+
+            string EtapeName = "A";
+            List<GenericNode> Solution = new List<GenericNode>();
+            Graph Graphe = new Graph();
+
+            int cptGlouton = 0;
+            while (etapesList.Count != 0)
+            {
+                
+                foreach (String nodeName in etapesList)
+                {
+                    depart.setEndNode(nodeName);
+                    List<GenericNode> SolutionTmp = Graphe.RechercheSolutionAEtoile(depart);                    
+                    if (poidsMin > CalculPoids(SolutionTmp))
+                    {
+                        EtapeName = nodeName;
+                        poidsMin = CalculPoids(SolutionTmp);
+                        SolutionEtape = SolutionTmp;                        
+                    }
+                }
+
+
+                poidsMin = int.MaxValue;
+                foreach (GenericNode Gn in SolutionEtape)
+                {
+                    if (Solution.Count != 0)
+                    {
+                        if (Solution.Last().GetNom() != Gn.GetNom())
+                        {
+                            Solution.Add(Gn);
+                            if (Gn.GetNom() == "A")
+                            {
+                                cptGlouton = 0;
+                            }
+                        }
+                    }
+                    else
+                        Solution.Add(Gn);
+
+                }
+
+                cptGlouton++;
+                MessageBox.Show(cptGlouton.ToString());
+                if (cptGlouton == 4)
+                {
+                    depart = new NodeGraph(EtapeName);
+                    depart.setEndNode("A");
+                    List<GenericNode> RetourA = Graphe.RechercheSolutionAEtoile(depart);
+                    foreach (GenericNode Gn in RetourA)
+                    {
+                        if (Solution.Count != 0)
+                        {
+                            if (Solution.Last().GetNom() != Gn.GetNom())
+                            {
+                                Solution.Add(Gn);
+                            }
+                        }
+                        else
+                            Solution.Add(Gn);
+                    }
+                    cptGlouton = 0;
+                    depart = new NodeGraph("A");
+                    etapesList.Remove(EtapeName);
+                }
+                else
+                {
+                    depart = new NodeGraph(EtapeName);
+                    etapesList.Remove(EtapeName);
+                }
+            }
+
+            NodeGraph retourDepart = new NodeGraph(Solution.Last().GetNom());
+            retourDepart.setEndNode("A");
+            SolutionEtape = Graphe.RechercheSolutionAEtoile(retourDepart);
+            foreach (GenericNode Gn in SolutionEtape)
+            {
+                if (Solution.Count != 0)
+                {
+                    if (Solution.Last().GetNom() != Gn.GetNom())
+                    {
+                        Solution.Add(Gn);
+                    }
+                }
+                else
+                    Solution.Add(Gn);
+            }
+
+
+            string reponse = "Le chemin est : ";
+            string poids = "Son poids est : ";
+            foreach (GenericNode Gn in Solution)
+            {
+                reponse += Gn.GetNom() + " ";
+            }
+
+            MessageBox.Show(reponse + "\n" + poids + CalculPoids(Solution).ToString());
+
+            double borneMax = CalculPoids(Solution);
+            #endregion
+
+            #region Algorithme du voyageur du commerce avec retour
+
+            GraphVoyageur Voyageur = new GraphVoyageur();
+
+            MethodeRecursive("", listeChar, ListesChemins);
+            List<GenericNode> SolutionOptimale = new List<GenericNode>();
+            double poidsVoyageur = int.MaxValue;
+            double poidsCourant = 0;
+            foreach (string combinaison in ListesChemins)
+            {
+                List<String> CheminVoyageur = new List<string>();
+                int cptStandart = 0;
+
+                List<GenericNode> SolutionTmp = new List<GenericNode>();
+                List<GenericNode> SolutionEtapeVoyageur = new List<GenericNode>();
+
+                foreach (char etapeVoyageur in combinaison)
+                {
+                    CheminVoyageur.Add(etapeVoyageur.ToString());
+                }
+
+                NodeGraph departVoyageur = new NodeGraph("A", poidsCourant);
+
+                departVoyageur.setBorneMax((int)borneMax);
+                bool fin = true;
+
+                List<String> aIgnore = new List<string>();
+
+                foreach (String nodeName in CheminVoyageur)
+                {
+                    if (!aIgnore.Contains(nodeName))
+                    {
+                        double poidsTemp = CalculPoids(SolutionTmp);
+                        if (poidsTemp < borneMax && fin != false)
+                        {
+                            cptStandart++;
+                            departVoyageur.setEndNode(nodeName);
+                            SolutionEtapeVoyageur = Voyageur.RechercheSolutionAEtoile(departVoyageur);
+
+                            foreach (GenericNode Gn in SolutionEtapeVoyageur)
+                            {
+                                if (nodeName.Contains(Gn.GetNom()) && cptStandart != 4)
+                                {
+                                    cptStandart++;
+                                    aIgnore.Add(nodeName);
+                                }
+                                if (SolutionTmp.Count != 0)
+                                {
+                                    if (SolutionTmp.Last().GetNom() != Gn.GetNom())
+                                    {
+                                        SolutionTmp.Add(Gn);
+                                    }
+                                }
+                                else
+                                    SolutionTmp.Add(Gn);
+
+                            }
+
+                            if (cptStandart == 4)
+                            {
+                                poidsCourant = CalculPoids(SolutionTmp);
+                                departVoyageur = new NodeGraph(nodeName, poidsCourant);
+                                departVoyageur.setEndNode("A");
+                                List <GenericNode> SolutionRetourA = Voyageur.RechercheSolutionAEtoile(departVoyageur);
+
+                                foreach (GenericNode Gn in SolutionRetourA)
+                                {
+                                    if (SolutionTmp.Count != 0)
+                                    {
+                                        if (SolutionTmp.Last().GetNom() != Gn.GetNom())
+                                        {
+                                            SolutionTmp.Add(Gn);
+                                        }
+                                    }
+                                    else
+                                        SolutionTmp.Add(Gn);
+                                }
+                                cptStandart = 0;
+                                poidsCourant = CalculPoids(SolutionTmp);
+                                departVoyageur = new NodeGraph("A", poidsCourant);
+                            }
+                            else
+                            {
+                                poidsCourant = CalculPoids(SolutionTmp);
+                                departVoyageur = new NodeGraph(nodeName, poidsCourant);
+                            }
+
+                            if (SolutionEtapeVoyageur.Count == 0)
+                            {
+                                fin = false;
+                                SolutionTmp.Clear();
+                            }
+
+                        }
+                    }
+                }
+
+                departVoyageur.setEndNode("A");
+                SolutionEtapeVoyageur = Voyageur.RechercheSolutionAEtoile(departVoyageur);
+
+                foreach (GenericNode Gn in SolutionEtapeVoyageur)
+                {
+                    if (SolutionTmp.Count != 0)
+                    {
+                        if (SolutionTmp.Last().GetNom() != Gn.GetNom())
+                        {
+                            SolutionTmp.Add(Gn);
+                        }
+                    }
+                    else
+                        SolutionTmp.Add(Gn);
+                }
+
+
+                if (poidsVoyageur > CalculPoids(SolutionTmp))
+                {
+                    poidsVoyageur = CalculPoids(SolutionTmp);
+                    SolutionOptimale = SolutionTmp;
+                }
+            }
+
+            string reponseOptimale = "Le chemin optimal est : ";
+            string poidsOptimal = "Son poids est : ";
+            foreach (GenericNode Gn in SolutionOptimale)
+            {
+                reponseOptimale += Gn.GetNom() + " ";
+            }
+
+            MessageBox.Show(reponseOptimale + "\n" + poidsOptimal + CalculPoids(SolutionOptimale).ToString());
+            #endregion        
+        
+        }
+
+        private void colorationButton_Click(object sender, EventArgs e)
+        {
+            #region Utilisation d'un algorithme glouton
+
+            List<NodeColoriage> Graphe = new List<NodeColoriage>();
+
+            for (int i = 0; i < matriceAdjacente.GetLength(0);++i )
+            {
+                NodeColoriage node = new NodeColoriage(Convert.ToChar(i + 65).ToString());
+                Graphe.Add(node);
+                node.setMatrice(matriceAdjacente);
+                node.GetListSucc();
+            }
+
+            Graphe = Graphe.OrderBy(o => o.Successeur.Count).ToList();
+            Graphe.Reverse();
+
+            bool ColoriageComplet = false;
+            int crayon = 1;
+            int cptstatue1 = 0;
+            int cptstatue2 = 0;
+            int cptstatue3 = 0;
+            
+            while (!ColoriageComplet)
+            {
+                string crayonString = "s" + crayon;
+                int cpt = 0;
+                foreach (NodeColoriage node in Graphe)
+                {                    
+                    if (node.Statue == null)
+                    {
+                        bool voisin = false;
+                        foreach (String Succ in node.Successeur)
+                        {
+                            if (Graphe.Find(o => o.GetNom() == Succ).Statue == crayonString)
+                                voisin = true;
+                        }
+
+                        if (!voisin)
+                        {
+                            node.Statue = crayonString;
+                            if (crayon == 1)
+                                cptstatue1++;
+                            else if (crayon == 2)
+                                cptstatue2++;
+                            else
+                                cptstatue3++;
+
+                            if (crayonString == "s1" && cptstatue1 == 8)
+                                crayon++;
+                            else if (crayonString == "s2" && cptstatue2 == 8)
+                                crayon++;
+
+                            crayonString = "s" + crayon;
+                        }
+                    }
+                    else
+                        cpt++;
+                }
+                if (cpt == Graphe.Count)
+                    ColoriageComplet = true;
+            }
+
+            string resultat ="";
+            foreach (NodeColoriage node in Graphe)
+            {
+                resultat += node.GetNom() + " : " + node.Statue + "\n";   
+            }
+
+            MessageBox.Show(resultat);
+            #endregion
+        }
+        
+
     
+    }
 }
+    
+

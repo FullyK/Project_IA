@@ -1,0 +1,55 @@
+C:\Documents and Settings\Salotti\mes documents\visual studio 2010\Projects\WindowsNeuralNetworks\WindowsNeuralNetworks\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Salotti\mes documents\visual studio 2010\Projects\WindowsNeuralNetworks\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Documents and Settings\Salotti\mes documents\visual studio 2010\Projects\WindowsNeuralNetworks\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Documents and Settings\Salotti\mes documents\visual studio 2010\Projects\WindowsNeuralNetworks\WindowsNeuralNetworks\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Salotti\mes documents\visual studio 2010\Projects\WindowsNeuralNetworks\WindowsNeuralNetworks\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Salotti\Mes documents\enseignement\ingénieurs\controle et apprentissage automatique\WindowsNeuralNetworks\WindowsNeuralNetworks\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Salotti\Mes documents\enseignement\ingénieurs\controle et apprentissage automatique\WindowsNeuralNetworks\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Documents and Settings\Salotti\Mes documents\enseignement\ingénieurs\controle et apprentissage automatique\WindowsNeuralNetworks\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Documents and Settings\Salotti\Mes documents\enseignement\ingénieurs\controle et apprentissage automatique\WindowsNeuralNetworks\WindowsNeuralNetworks\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Salotti\Mes documents\enseignement\ingénieurs\controle et apprentissage automatique\WindowsNeuralNetworks\WindowsNeuralNetworks\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\Salotti\Mes documents\enseignement\ingénieurs\controle et apprentissage automatique\WindowsNeuralNetworks\WindowsNeuralNetworks\bin\Debug\WindowsNeuralNetworks.exe
+C:\Documents and Settings\Salotti\Mes documents\enseignement\ingénieurs\controle et apprentissage automatique\WindowsNeuralNetworks\WindowsNeuralNetworks\bin\Debug\WindowsNeuralNetworks.pdb
+C:\Documents and Settings\Salotti\Mes documents\enseignement\ingénieurs\controle et apprentissage automatique\WindowsNeuralNetworks\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.exe
+C:\Documents and Settings\Salotti\Mes documents\enseignement\ingénieurs\controle et apprentissage automatique\WindowsNeuralNetworks\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.pdb
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs en cognitique\apprentissage automatique et controle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.exe
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs en cognitique\apprentissage automatique et controle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.pdb
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs en cognitique\apprentissage automatique et controle\perceptron multi-couches\WindowsNeuralNetworks\bin\Debug\WindowsNeuralNetworks.exe
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs en cognitique\apprentissage automatique et controle\perceptron multi-couches\WindowsNeuralNetworks\bin\Debug\WindowsNeuralNetworks.pdb
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs en cognitique\apprentissage automatique et controle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs en cognitique\apprentissage automatique et controle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs en cognitique\apprentissage automatique et controle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs en cognitique\apprentissage automatique et controle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs en cognitique\apprentissage automatique et controle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs\apprentissage automatique et controle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.exe
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs\apprentissage automatique et controle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.pdb
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs\apprentissage automatique et controle\perceptron multi-couches\WindowsNeuralNetworks\bin\Debug\WindowsNeuralNetworks.exe
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs\apprentissage automatique et controle\perceptron multi-couches\WindowsNeuralNetworks\bin\Debug\WindowsNeuralNetworks.pdb
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs\apprentissage automatique et controle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs\apprentissage automatique et controle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs\apprentissage automatique et controle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.csproj.GenerateResource.Cache
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs\apprentissage automatique et controle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.csprojResolveAssemblyReference.cache
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs\intelligence artificielle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.exe
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs\intelligence artificielle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.pdb
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs\intelligence artificielle\perceptron multi-couches\WindowsNeuralNetworks\bin\Debug\WindowsNeuralNetworks.exe
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs\intelligence artificielle\perceptron multi-couches\WindowsNeuralNetworks\bin\Debug\WindowsNeuralNetworks.pdb
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs\intelligence artificielle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.csprojResolveAssemblyReference.cache
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs\intelligence artificielle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs\intelligence artificielle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\jsalotti\Documents\enseignement\Ingénieurs\intelligence artificielle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.csproj.GenerateResource.Cache
+C:\Users\jsalotti.ENSC.000\Documents\enseignement\Ingénieurs\intelligence artificielle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.exe
+C:\Users\jsalotti.ENSC.000\Documents\enseignement\Ingénieurs\intelligence artificielle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.pdb
+C:\Users\jsalotti.ENSC.000\Documents\enseignement\Ingénieurs\intelligence artificielle\perceptron multi-couches\WindowsNeuralNetworks\bin\Debug\WindowsNeuralNetworks.exe
+C:\Users\jsalotti.ENSC.000\Documents\enseignement\Ingénieurs\intelligence artificielle\perceptron multi-couches\WindowsNeuralNetworks\bin\Debug\WindowsNeuralNetworks.pdb
+C:\Users\jsalotti.ENSC.000\Documents\enseignement\Ingénieurs\intelligence artificielle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.csprojResolveAssemblyReference.cache
+C:\Users\jsalotti.ENSC.000\Documents\enseignement\Ingénieurs\intelligence artificielle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\jsalotti.ENSC.000\Documents\enseignement\Ingénieurs\intelligence artificielle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\jsalotti.ENSC.000\Documents\enseignement\Ingénieurs\intelligence artificielle\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.csproj.GenerateResource.Cache
+C:\Users\jalbouys\Downloads\PROJET IA PARTIE 2\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.exe
+C:\Users\jalbouys\Downloads\PROJET IA PARTIE 2\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.pdb
+C:\Users\jalbouys\Downloads\PROJET IA PARTIE 2\perceptron multi-couches\WindowsNeuralNetworks\bin\Debug\WindowsNeuralNetworks.exe
+C:\Users\jalbouys\Downloads\PROJET IA PARTIE 2\perceptron multi-couches\WindowsNeuralNetworks\bin\Debug\WindowsNeuralNetworks.pdb
+C:\Users\jalbouys\Downloads\PROJET IA PARTIE 2\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.csprojResolveAssemblyReference.cache
+C:\Users\jalbouys\Downloads\PROJET IA PARTIE 2\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\jalbouys\Downloads\PROJET IA PARTIE 2\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\jalbouys\Downloads\PROJET IA PARTIE 2\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.csproj.GenerateResource.Cache

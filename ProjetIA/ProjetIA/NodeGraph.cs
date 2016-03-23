@@ -8,9 +8,9 @@ namespace ProjetIA
 {
     class NodeGraph : GenericNode
     {
-        private static string EndNode;
-        private static int[,] Matrice;
-        private double poidsPrecedent;
+        protected static string EndNode;
+        protected static int[,] Matrice;
+        protected double poidsPrecedent;
         
 
         public NodeGraph(string nom)

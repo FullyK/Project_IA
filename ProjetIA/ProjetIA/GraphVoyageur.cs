@@ -41,22 +41,6 @@ namespace ProjetIA
                 {
                     N = null;
                 }
-
-                int cout = 0;
-                GenericNode Ntmp = N;
-                List<GenericNode> NListTmp = new List<GenericNode>();
-                NListTmp.Add(N);
-                while (Ntmp != N0)
-                {
-                    Ntmp = Ntmp.GetNoeud_Parent();
-                    NListTmp.Insert(0, Ntmp);  // On insère en position 1
-                }
-                if (CalculPoids(NListTmp) > N.getBorneMac())
-                {
-                    L_Ouverts.Clear();
-                    N = null;
-                }
-
             }
 
             // A* terminé
