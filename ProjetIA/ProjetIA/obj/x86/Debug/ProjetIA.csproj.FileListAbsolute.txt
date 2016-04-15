@@ -21,3 +21,11 @@ C:\Users\jalbouys\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.Pr
 C:\Users\jalbouys\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.csproj.GenerateResource.Cache
 C:\Users\jalbouys\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.csprojResolveAssemblyReference.cache
 C:\Users\jalbouys.ENSC.000\Desktop\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.csprojResolveAssemblyReference.cache
+D:\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.exe
+D:\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.pdb
+D:\Project_IA\ProjetIA\ProjetIA\bin\Debug\ProjetIA.exe
+D:\Project_IA\ProjetIA\ProjetIA\bin\Debug\ProjetIA.pdb
+D:\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.csprojResolveAssemblyReference.cache
+D:\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.Form1.resources
+D:\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.Properties.Resources.resources
+D:\Project_IA\ProjetIA\ProjetIA\obj\x86\Debug\ProjetIA.csproj.GenerateResource.Cache

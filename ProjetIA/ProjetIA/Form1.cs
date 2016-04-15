@@ -91,6 +91,7 @@ namespace ProjetIA
             Graph g = new Graph();
             List<GenericNode> Solution = g.RechercheSolutionAEtoile(depart);
 
+
             string reponse = "Le chemin est : ";
             string poids = "Son poids est : ";
             foreach (GenericNode Gn in Solution)
@@ -99,6 +100,7 @@ namespace ProjetIA
             }
 
             MessageBox.Show(reponse + "\n" + poids + CalculPoids(Solution).ToString());
+            g.GetSearchTree(arbre);
         }
 
         private int[,] matriceEtape(List<string> etapesList)
