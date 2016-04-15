@@ -231,7 +231,7 @@ namespace ProjetIA
                 reponse += Gn.GetNom() + " ";
             }
 
-            MessageBox.Show(reponse + "\n" + poids + CalculPoids(Solution).ToString());
+           //MessageBox.Show(reponse + "\n" + poids + CalculPoids(Solution).ToString());
 
             double borneMax = CalculPoids(Solution);
             #endregion
@@ -457,7 +457,7 @@ namespace ProjetIA
                 }
 
                 cptGlouton++;
-                MessageBox.Show(cptGlouton.ToString());
+                //MessageBox.Show(cptGlouton.ToString());
                 if (cptGlouton == 4)
                 {
                     depart = new NodeGraph(EtapeName);
@@ -510,7 +510,7 @@ namespace ProjetIA
                 reponse += Gn.GetNom() + " ";
             }
 
-            MessageBox.Show(reponse + "\n" + poids + CalculPoids(Solution).ToString());
+            //MessageBox.Show(reponse + "\n" + poids + CalculPoids(Solution).ToString());
 
             double borneMax = CalculPoids(Solution);
             #endregion
