@@ -34,7 +34,7 @@ namespace WindowsFormsApplication1
                                         Convert.ToInt32(textBoxnbneurcouche.Text));
 
 
-            System.IO.StreamReader file = new System.IO.StreamReader(@"C:\Users\jalbouys.ENSC\Desktop\Project_IA\PROJET IA PARTIE 2\donneespb4.txt");
+            System.IO.StreamReader file = new System.IO.StreamReader(@"C:\Users\jalbouys\Desktop\Project_IA\PROJET IA PARTIE 2\donneespb4.txt");
             for (int i = 0; i < 3000; i++)
             {
                 List<double> vect = new List<double>();
@@ -132,14 +132,31 @@ namespace WindowsFormsApplication1
                  for (int y = 0; y < 500; y++)
                  {
                      z2 = lsortiesobtenues[cpt];
-                     z = (int)(z2 * 255);
-                     lzdesire.Add(z);
-                     Color newColor = Color.FromArgb(z, z, z);
-                     bmp.SetPixel(x, y, newColor);
+
+                     if (z2 < 0.5)
+                     {
+                         bmp.SetPixel(x, y, Color.Blue);
+                     }
+                     else
+                         bmp.SetPixel(x, y, Color.Red);
+
+                     //z = (int)(z2 * 255);
+                     //lzdesire.Add(z);
+                     //Color newColor = Color.FromArgb(z, z, z);
+                     //bmp.SetPixel(x, y, newColor);
                      cpt++;
                  }                
             }
              lzdesire.ToString();
+
+             for (int i = 0; i < this.lvecteursentrees.Count; ++i)
+             {
+                 if (this.lsortiesdesirees[i] == 0.2)
+                     bmp.SetPixel(Convert.ToInt32(this.lvecteursentrees[i][0]*500), Convert.ToInt32(this.lvecteursentrees[i][1]*500), Color.White);
+                 else
+                     bmp.SetPixel(Convert.ToInt32(this.lvecteursentrees[i][0]*500), Convert.ToInt32(this.lvecteursentrees[i][1]*500), Color.Black);
+
+             }
 
         }
         

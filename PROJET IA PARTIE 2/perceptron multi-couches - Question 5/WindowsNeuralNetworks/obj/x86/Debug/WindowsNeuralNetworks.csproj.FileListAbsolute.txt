@@ -61,3 +61,19 @@ C:\Users\jalbouys.ENSC\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-co
 C:\Users\jalbouys.ENSC\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.exe
 C:\Users\jalbouys.ENSC\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.pdb
 C:\Users\jalbouys.ENSC\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.csprojResolveAssemblyReference.cache
+C:\Users\jalbouys.ENSC\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches - Question 5\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.exe
+C:\Users\jalbouys.ENSC\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches - Question 5\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.pdb
+C:\Users\jalbouys.ENSC\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches - Question 5\WindowsNeuralNetworks\bin\Debug\WindowsNeuralNetworks.exe
+C:\Users\jalbouys.ENSC\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches - Question 5\WindowsNeuralNetworks\bin\Debug\WindowsNeuralNetworks.pdb
+C:\Users\jalbouys.ENSC\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches - Question 5\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.csprojResolveAssemblyReference.cache
+C:\Users\jalbouys.ENSC\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches - Question 5\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\jalbouys.ENSC\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches - Question 5\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\jalbouys.ENSC\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches - Question 5\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.csproj.GenerateResource.Cache
+C:\Users\jalbouys\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches - Question 5\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.exe
+C:\Users\jalbouys\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches - Question 5\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.pdb
+C:\Users\jalbouys\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches - Question 5\WindowsNeuralNetworks\bin\Debug\WindowsNeuralNetworks.exe
+C:\Users\jalbouys\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches - Question 5\WindowsNeuralNetworks\bin\Debug\WindowsNeuralNetworks.pdb
+C:\Users\jalbouys\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches - Question 5\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.csprojResolveAssemblyReference.cache
+C:\Users\jalbouys\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches - Question 5\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\jalbouys\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches - Question 5\WindowsNeuralNetworks\obj\x86\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\jalbouys\Desktop\Project_IA\PROJET IA PARTIE 2\perceptron multi-couches - Question 5\WindowsNeuralNetworks\obj\x86\Debug\WindowsNeuralNetworks.csproj.GenerateResource.Cache
